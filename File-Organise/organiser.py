@@ -35,5 +35,6 @@ for i in folder.iterdir():
                 dest.mkdir(exist_ok=True)
                 shutil.move(i, dest)
                 break
-        
+
+print("Congratulations, Your Folder Has Been Organised")
 
