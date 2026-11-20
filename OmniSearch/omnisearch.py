@@ -114,8 +114,10 @@ class Search:
         query_vec = model.encode(query, normalize_embeddings=True)
         scores = filtered_vectors @ query_vec
         sorted_scores=np.argsort(scores)[::-1] # ::-1 to reverse the sort 
-        return f"Top 3 Results: \n {filtered_names[sorted_scores[0]]} Match: {scores[sorted_scores[0]]*100:.1f} \n  {filtered_names[sorted_scores[1]]} Match: {scores[sorted_scores[1]]*100:.1f}  \n {filtered_names[sorted_scores[2]]} Match: {scores[sorted_scores[2]]*100:.1f} "
-
+        if len(sorted_scores)>=3:
+            return f"Top 3 Results: \n {filtered_names[sorted_scores[0]]} Match: {scores[sorted_scores[0]]*100:.1f} \n  {filtered_names[sorted_scores[1]]} Match: {scores[sorted_scores[1]]*100:.1f}  \n {filtered_names[sorted_scores[2]]} Match: {scores[sorted_scores[2]]*100:.1f} "
+        else:
+            return f"Results: {filtered_names[sorted_scores[0]]} Match: {scores[sorted_scores[0]]}"
 
         
 
