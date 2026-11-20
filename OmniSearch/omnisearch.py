@@ -117,7 +117,7 @@ class Search:
         if len(sorted_scores)>=3:
             return f"Top 3 Results: \n {filtered_names[sorted_scores[0]]} Match: {scores[sorted_scores[0]]*100:.1f} \n  {filtered_names[sorted_scores[1]]} Match: {scores[sorted_scores[1]]*100:.1f}  \n {filtered_names[sorted_scores[2]]} Match: {scores[sorted_scores[2]]*100:.1f} "
         else:
-            return f"Results: {filtered_names[sorted_scores[0]]} Match: {scores[sorted_scores[0]]}"
+            return f"Results: {filtered_names[sorted_scores[0]]} Match: {scores[sorted_scores[0]]*100:.1f}"
 
         
 
