@@ -49,7 +49,7 @@ class Search:
         for i in path.iterdir():
             try:
                 print(f"Indexing: {i.name}")
-                if i.name.startswith(".") or i.name in ["__pycache__", "venv", ".venv", "site-packages","node_modules","Images","Wallpapers","wallpaper"]:
+                if i.name.startswith(".") or i.name in ["__pycache__", "venv", ".venv", "site-packages","node_modules","Images","Wallpapers"]:
                     continue
                 if not i.is_file():
                     self.store_folder(i)
@@ -131,11 +131,13 @@ def main():
             case "0":
                 if Path("index.pkl").exists():
                     engine.open_database()
-                name=input('Enter Exact Path Of The Folder You Need To Organise, You Can Add Multiple Folder Path Seprated By " ": ')
+                name=input('Enter Exact Path Of The Folder You Need To Organise, You Can Add Multiple Folder Path Seprated By " " [Make sure a spaces b/w a path if any are in qoutes]: ')
                 engine.model
                 if " " in name.strip():
                     mutiple=name.split(" ")
                     for j in mutiple:
+                        if '"' in j:
+                            j.replace('"',"")
                         path=Path(j)
                         if not path.exists():
                             sys.exit("Path Does Not Exits")
