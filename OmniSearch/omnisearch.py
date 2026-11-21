@@ -7,6 +7,10 @@ import pypdf as pdf
 import zipfile
 import os
 
+os.environ["HF_HUB_VERBOSITY"] = "error"
+image_exts = [".jpg", ".jpeg", ".png", ".webp", ".bmp"]
+code_exts = [".txt", ".csv", ".md", ".json", ".py"]
+
 class Search:
     def __init__(self):
         self.loop=True
@@ -118,12 +122,6 @@ class Search:
             return f"Top 3 Results: \n {filtered_names[sorted_scores[0]]} Match: {scores[sorted_scores[0]]*100:.1f} \n  {filtered_names[sorted_scores[1]]} Match: {scores[sorted_scores[1]]*100:.1f}  \n {filtered_names[sorted_scores[2]]} Match: {scores[sorted_scores[2]]*100:.1f} "
         else:
             return f"Results: {filtered_names[sorted_scores[0]]} Match: {scores[sorted_scores[0]]*100:.1f}"
-
-        
-
-os.environ["HF_HUB_VERBOSITY"] = "error"
-image_exts = [".jpg", ".jpeg", ".png", ".webp", ".bmp"]
-code_exts = [".txt", ".csv", ".md", ".json", ".py"]
 
 def main():
     engine=Search()
