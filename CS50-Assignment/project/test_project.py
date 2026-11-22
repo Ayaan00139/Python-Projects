@@ -6,10 +6,10 @@ import pytest
 
 class test:
     def __init__(self):
-        self.database = []
+        self.database = {}
 
 
-array = []
+array = {}
 
 
 def test_store_database():

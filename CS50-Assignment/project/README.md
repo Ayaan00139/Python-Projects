@@ -1,5 +1,5 @@
 # OmniSearch 🔍
-#### Video Demo: <URL HERE>
+#### Video Demo: https://youtu.be/PzIvOunsz-k
 #### Description:
 
 OmniSearch is a local, file search engine built in Python. Unlike traditional file search tools that rely on exact filename matches, it indexes and searches files based on their content. Users can provide one or multiple directory paths to be indexed, and OmniSearch creates a vector of anything using a **CLIP** model of **OPENAI** of everything inside including images, multi-page PDFs, source code, text files, and zip archives.

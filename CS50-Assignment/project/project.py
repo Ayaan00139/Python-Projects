@@ -166,7 +166,7 @@ def filter_data(fil=None, database=None):
 def main():
     engine = Search()
     while True:
-        goodinput = input("[0] Store  [1] Search  [q] Quit: ")
+        goodinput = input("[0] Store  [1] Search  [q] Quit: ").strip()
         match goodinput:
             case "0":
                 if Path("index.pkl").exists():
