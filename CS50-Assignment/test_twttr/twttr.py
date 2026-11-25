@@ -6,25 +6,29 @@ def main():
     except ValueError:
         pass
     else:
-        sys.exit("")
+        raise AssertionError
     string=shorten(x)
     print(*string)
 
 
 def shorten(x):
+    value=""
     try:
         float(x)
     except ValueError:
         pass
     else:
-        sys.exit("")
+        raise AssertionError
     temp=[]
     for i in x:
         if i.lower() in ["a","e","i","o","u"]:
             pass
+
         else:
             temp.append(i)
-    return temp
+    for i in temp:
+        value=f"{value}{i}"
+    return value
 
 if __name__ == "__main__":
     main()
